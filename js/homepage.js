@@ -7,6 +7,8 @@ window.addEventListener('DOMContentLoaded',(event)=>{
 }
 );
 const getEmployeePayrollDataFromStorage = () => {
+    let employeePayrollList = createEmployeePayrollJSON();
+    localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
     return localStorage.getItem('EmployeePayrollList') ? 
                         JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];  
   }
@@ -37,11 +39,11 @@ const createInnerHTML =()=>{
 const createEmployeePayrollJSON = () => {
     let empPayrollListLocal = [
       {       
-        _name: 'Harish',
-        _gender: 'male',
+        _name: 'Nadeem Akhtar',
+        _gender: 'Male',
         _department: [
             'Engineering',
-            'Finance'
+            
         ],
         _salary: '500000',
         _startDate: '1 Nov 2020',
@@ -50,8 +52,8 @@ const createEmployeePayrollJSON = () => {
         _profilePic: '../assets/emp1.png'
       },
       {
-        _name: 'Savita',
-        _gender: 'female',
+        _name: 'Atif Aslam',
+        _gender: 'Male',
         _department: [
             'Sales'
         ],
@@ -59,7 +61,7 @@ const createEmployeePayrollJSON = () => {
         _startDate: '1 Nov 2020',
         _note: '',
         _id: new Date().getTime() + 1,
-        _profilePic: '../assets/emp4.png'
+        _profilePic: '../assets/emp3.png'
       }
     ];
     return empPayrollListLocal;
